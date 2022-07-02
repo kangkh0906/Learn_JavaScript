@@ -165,7 +165,7 @@ const calculate = (command, a, b) => {
         case 'remainder':
             return a % b;
         default:
-            console.log('error!');
-            break;
+            throw Error('unknown command');
     };
 };
+console.log(calculate('add', 2, 3));
