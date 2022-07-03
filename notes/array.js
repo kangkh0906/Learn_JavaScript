@@ -36,7 +36,7 @@ fruits.forEach((fruit, index) => {console.log(fruit, index)});
 fruits.push('strawberry', 'peach');
 console.log(fruits);
 
-// pop: remove an item from the end
+// pop: remove an item from the end and return it
 fruits.pop();
 fruits.pop();
 console.log(fruits);
