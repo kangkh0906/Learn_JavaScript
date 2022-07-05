@@ -1,4 +1,4 @@
-# Learn JavaScript
-Learning JavaScript 22.06.28 ~
+# Learn-JavaScript
+Learning JavaScript And Update Notes
 
-Update JavaScript Notes
+from Dream Coding Youtube.
