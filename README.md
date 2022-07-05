@@ -1,4 +1,2 @@
-# Learn JavaScript
-Learning JavaScript 22.06.28 ~
-
-Update JavaScript Notes
+# Learn-JavaScript
+Learning JavaScript And Update Notes
