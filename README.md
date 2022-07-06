@@ -1,4 +1,4 @@
 # Learn-JavaScript
-Learning JavaScript And Update Notes
+Learn JavaScript And Update Notes
 
 from Dream Coding Youtube.
