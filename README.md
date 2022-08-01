@@ -1,3 +1,3 @@
-# Learn JavaScript And Update Notes
+# Programming-language-notes
 
-Learning JavaScript.
+Notes and Materials in Programming Language
