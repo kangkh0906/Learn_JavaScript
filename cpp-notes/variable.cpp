@@ -143,5 +143,12 @@ int main()
 
   cout << static_cast<int>(ch) << endl;
 
+  // 7. auto
+  // 추천하지 않음
+
+  auto x = 100;     // int
+  auto y = 1.5;     // float
+  auto z = 1.3e12L; // long long
+
   return 0;
 }
