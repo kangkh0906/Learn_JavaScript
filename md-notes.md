@@ -48,11 +48,11 @@ Numbers:
 
 <!-- Link -->
 
-Click [here](https://github.com/mucent)
+Click [here](https://github.com/nageune)
 
 <!-- Image -->
 
-![image description](https://user-images.githubusercontent.com/61736137/102153953-b2881000-3ebb-11eb-9581-7026bc8e169e.jpg)
+![image description](https://github.com/nageune.png)
 
 <!-- Table -->
 
