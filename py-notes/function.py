@@ -61,3 +61,61 @@ def function1():
 # - 따라서 복수의 리턴 값을 넘겨줄 수 없음
 # - 튜플(tuple)을 사용하여 둘 이상의 리턴 값 넘겨주기 가능
 # - 리턴 값이 없는 함수도 가능
+
+# 7. 디폴트 매개 변수(Default Parameter)
+# - 함수의 매개 변수의 디폴트 값을 정해줄 수 있음
+# - 디폴트 값이 정해진 매개 변수는 호출 시 인자를 입력하지 않아도 됨
+
+
+def defaultParameter(param="param"):
+    print(param)
+
+
+defaultParameter()
+defaultParameter("not default")
+# -> param
+#    not default
+
+
+# - 매개 변수가 많은 경우 뒤의 매개 변수부터 디폴트 값 설정 가능
+# - 디폴트 값은 연속으로 설정해야함
+
+
+def defaultParameter(pa1="1", pa2="2", pa3="3"):
+    print(pa1 + " " + pa2 + " " + pa3)
+
+
+defaultParameter()
+# -> 1 2 3
+
+
+def defaultParameter(pa1, pa2="2", pa3="3"):
+    print(pa1 + " " + pa2 + " " + pa3)
+
+
+defaultParameter(1)
+# -> 1 2 3
+
+
+def defaultParameter(pa1, pa2, pa3="3"):
+    print(pa1 + " " + pa2 + " " + pa3)
+
+
+defaultParameter(1, 2)
+# -> 1 2 3
+
+
+def defaultParameter(pa1="1", pa2="2", pa3):
+    print(pa1 + " " + pa2 + " " + pa3)
+
+
+defaultParameter()
+# -> Syntax Error
+
+
+def defaultParameter(pa1="1", pa2, pa3="3"):
+    print(pa1 + " " + pa2 + " " + pa3)
+
+
+defaultParameter()
+# -> Syntax Error
