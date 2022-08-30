@@ -3,8 +3,8 @@
 
 // 1. async
 async function fetchUser() {
-    // do network request in 10 secs...
-    return 'username';
+  // do network request in 10 secs...
+  return "username";
 }
 
 const user = fetchUser();
@@ -13,18 +13,18 @@ console.log(user);
 
 // 2. await
 function delay(ms) {
-    return new Promise(reslove => setTimeout(reslove, ms));
+  return new Promise((reslove) => setTimeout(reslove, ms));
 }
 
 async function getApple() {
-    await delay(2000);
-    // throw 'error';
-    return 'apple';
+  await delay(2000);
+  // throw 'error';
+  return "apple";
 }
 
 async function getBanana() {
-    await delay(1000);
-    return 'banana';
+  await delay(1000);
+  return "banana";
 }
 
 // function getBanana() {
@@ -39,68 +39,68 @@ async function getBanana() {
 // }
 
 async function pickFruits() {
-    const applePromise = getApple();
-    const bananaPromise = getBanana();
-    const apple = await applePromise;
-    const banana = await bananaPromise;
-    return `${apple} + ${banana}`;
+  const applePromise = getApple();
+  const bananaPromise = getBanana();
+  const apple = await applePromise;
+  const banana = await bananaPromise;
+  return `${apple} + ${banana}`;
 }
 
 pickFruits().then(console.log); // apple + banana
 
 // 3. useful Promise APIs
 function pickAllFruits() {
-    return Promise.all([getApple(), getBanana()])
-    .then(fruits => fruits.join(' + '));
+  return Promise.all([getApple(), getBanana()]).then((fruits) =>
+    fruits.join(" + ")
+  );
 }
 pickAllFruits().then(console.log); // apple + banana
 
 function pickOnlyOne() {
-    return Promise.race([getApple(), getBanana()]);
+  return Promise.race([getApple(), getBanana()]);
 }
 pickOnlyOne().then(console.log); // banana
 
-
 // Callback Hell Example To Promise -> async use
 class UserStorage {
-    async userLogin(id, password) {
-        const user = await this.loginUser(id, password);
-        const role = await this.getRoles(user);
-        return user, role;
-    };
+  async userLogin(id, password) {
+    const user = await this.loginUser(id, password);
+    const role = await this.getRoles(user);
+    return user, role;
+  }
 
-    loginUser(id, password) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (
-                    (id === 'username' && password === 'pw') ||
-                    (id === 'coder' && password === 'coderpw')
-                ) {
-                    resolve(id);
-                } else {
-                    reject(new Error('not Found'));
-                }
-            }, 2000);
-        });
-    }
+  loginUser(id, password) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (
+          (id === "username" && password === "pw") ||
+          (id === "coder" && password === "coderpw")
+        ) {
+          resolve(id);
+        } else {
+          reject(new Error("not Found"));
+        }
+      }, 2000);
+    });
+  }
 
-    getRoles(user) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (user === 'username') {
-                    resolve({name: 'username', role: 'admin'});
-                } else {
-                    reject(new Error('no access'));
-                }
-            }, 1000);
-        });
-    }
+  getRoles(user) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (user === "username") {
+          resolve({ name: "username", role: "admin" });
+        } else {
+          reject(new Error("no access"));
+        }
+      }, 1000);
+    });
+  }
 }
 
 const userStorage = new UserStorage();
-const id = prompt('enter your id');
-const password = prompt('enter your password');
+const id = prompt("enter your id");
+const password = prompt("enter your password");
 userStorage
-    .userLogin(id, password)
-    .then(user => alert(`Hello ${user.name}, you have a ${user.role} role`))
-    .catch(console.log);
+  .userLogin(id, password)
+  .then((user) => alert(`Hello ${user.name}, you have a ${user.role} role`))
+  .catch(console.log);

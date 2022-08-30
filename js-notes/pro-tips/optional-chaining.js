@@ -1,13 +1,13 @@
 // Optional Chaining
 const bob = {
-  name: 'Julia',
+  name: "Julia",
   age: 20,
 };
 const anna = {
-  name: 'Julia',
+  name: "Julia",
   age: 20,
   job: {
-    title: 'Software Engineer',
+    title: "Software Engineer",
   },
 };
 
@@ -27,6 +27,6 @@ function displayJobTitle(person) {
 
 // good
 function displayJobTitle(person) {
-  const title = person.job?.title ?? 'No Job Yet';
+  const title = person.job?.title ?? "No Job Yet";
   console.log(title);
 }

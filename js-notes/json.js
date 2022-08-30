@@ -6,18 +6,19 @@
 let json = JSON.stringify(true);
 console.log(json);
 
-json = JSON.stringify(['apple', 'banana']);
+json = JSON.stringify(["apple", "banana"]);
 console.log(json);
 
 const rabbit = {
-    name: 'tokki',
-    color: 'white',
-    size: null,
-    birthDate: new Date(),
-    // symbol: Symbol('id'), // ignored
-    jump: () => { // ignored
-        console.log(`${this.name} can jump!`);
-    },
+  name: "tokki",
+  color: "white",
+  size: null,
+  birthDate: new Date(),
+  // symbol: Symbol('id'), // ignored
+  jump: () => {
+    // ignored
+    console.log(`${this.name} can jump!`);
+  },
 };
 
 json = JSON.stringify(rabbit);
@@ -27,11 +28,10 @@ json = JSON.stringify(rabbit, ["name", "color"]);
 console.log(json); // {"name":"tokki","color":"white"}
 
 json = JSON.stringify(rabbit, (key, value) => {
-    console.log(`key: ${key}, value: ${value}`);
-    return key === 'name' ? 'username' : value;
+  console.log(`key: ${key}, value: ${value}`);
+  return key === "name" ? "username" : value;
 });
 console.log(json);
-
 
 // 2. JSON to Object
 // parse(json)
@@ -39,8 +39,8 @@ console.clear();
 json = JSON.stringify(rabbit);
 console.log(json);
 const obj = JSON.parse(json, (key, value) => {
-    console.log(`key: ${key}, value: ${value}`);
-    return key === 'birthDate' ? new Date(value) : value;
+  console.log(`key: ${key}, value: ${value}`);
+  return key === "birthDate" ? new Date(value) : value;
 });
 console.log(obj);
 rabbit.jump();

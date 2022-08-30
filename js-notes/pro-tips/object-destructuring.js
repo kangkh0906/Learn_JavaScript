@@ -1,8 +1,8 @@
 // Object Destructuring
 const person = {
-  name: 'Julia',
+  name: "Julia",
   age: 20,
-  tel: '01012345678',
+  tel: "01012345678",
 };
 // bad
 function displayPerson(person) {
@@ -22,7 +22,7 @@ function displayPerson(person) {
 
 // good
 function displayPerson(person) {
-  const {name, age} = person;
+  const { name, age } = person;
   displayAvatar(name);
   displayName(name);
   diplayProfile(name, age);

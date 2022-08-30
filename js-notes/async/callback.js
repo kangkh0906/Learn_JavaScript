@@ -1,70 +1,70 @@
-'use strict';
+"use strict";
 
 // JavaScript is synchronous.
 // Execute the code block in order after hoisting.
 // hoisting: var, function declaration
-console.log('1');
-setTimeout(() => console.log('2'), 1000);
-console.log('3');
-
+console.log("1");
+setTimeout(() => console.log("2"), 1000);
+console.log("3");
 
 // Synchronous callback
 function printImmediately(print) {
-    print();
+  print();
 }
-printImmediately(() => console.log('hello'));
+printImmediately(() => console.log("hello"));
 
 // Asynchronous callback
 function printWithDelay(print, timeout) {
-    setTimeout(print, timeout);
+  setTimeout(print, timeout);
 }
-printWithDelay(() => console.log('async callback'), 2000);
-
+printWithDelay(() => console.log("async callback"), 2000);
 
 // Callback Hell example
 class UserStorage {
-    loginUser(id, password, onSuccess, onError) {
-        setTimeout(() => {
-            if (
-                (id === 'username' && password === 'pw') ||
-                (id === 'coder' && password === 'coderpw')
-            ) {
-                onSuccess(id);
-            } else {
-                onError(new Error('not Found'));
-            }
-        }, 2000);
-    }
+  loginUser(id, password, onSuccess, onError) {
+    setTimeout(() => {
+      if (
+        (id === "username" && password === "pw") ||
+        (id === "coder" && password === "coderpw")
+      ) {
+        onSuccess(id);
+      } else {
+        onError(new Error("not Found"));
+      }
+    }, 2000);
+  }
 
-    getRoles(user, onSuccess, onError) {
-        setTimeout(() => {
-            if (user === 'username') {
-                onSuccess({name: 'username', role: 'admin'});
-            } else {
-                onError(new Error('no access'));
-            }
-        }, 1000);
-    }
+  getRoles(user, onSuccess, onError) {
+    setTimeout(() => {
+      if (user === "username") {
+        onSuccess({ name: "username", role: "admin" });
+      } else {
+        onError(new Error("no access"));
+      }
+    }, 1000);
+  }
 }
 
 const userStorage = new UserStorage();
-const id = prompt('enter your id');
-const password = prompt('enter your password');
+const id = prompt("enter your id");
+const password = prompt("enter your password");
 userStorage.loginUser(
-    id,
-    password,
-    (user) => {
-        userStorage.getRoles(
-            user,
-            (userWithRole) => {
-                alert(`Hello ${userWithRole.name}, you have a ${userWithRole.role} role`);
-            },
-            (error) => {
-                console.log(error);
-            }
+  id,
+  password,
+  (user) => {
+    userStorage.getRoles(
+      user,
+      (userWithRole) => {
+        alert(
+          `Hello ${userWithRole.name}, you have a ${userWithRole.role} role`
         );
-    },
-    (error) => {
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  },
+  (error) => {
     console.log(error);
-    }
+  }
 );

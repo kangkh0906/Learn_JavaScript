@@ -4,9 +4,8 @@
 function displayUser() {
   fetchUser() //
     .then((user) => {
-      fetchProfile(user)
-        .then((profile) => {
-          updateUI(user, profile);
+      fetchProfile(user).then((profile) => {
+        updateUI(user, profile);
       });
     });
 }

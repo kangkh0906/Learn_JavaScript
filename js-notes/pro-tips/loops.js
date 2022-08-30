@@ -10,7 +10,7 @@ function getAllEvens(items) {
   //   }
   // }
   // return result;
-  return items.filter(num => num % 2 === 0);
+  return items.filter((num) => num % 2 === 0);
 }
 
 function multiplyByFour(items) {
@@ -19,7 +19,7 @@ function multiplyByFour(items) {
   //   result.push(item[i] * 4);
   // }
   // return result;
-  return items.map(num => num * 4);
+  return items.map((num) => num * 4);
 }
 
 function sumArray(items) {
