@@ -141,3 +141,11 @@ str = "I ate %d apples and %d bananas" % (3, 5)
 # %c -> Character
 # %o -> Octal number
 # %x -> Hexadecimal
+
+# 7. f-string
+# - 문자열 내에서 변수를 사용하는 방법
+# f"내용 {변수}"
+
+my_name = "홍길동"
+print(f"Hello! My name is {my_name}")
+# -> Hello! My name is 홍길동
