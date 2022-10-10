@@ -112,7 +112,7 @@ long long은 8바이트
 <img width="872" alt="스크린샷 2022-10-10 18 10 44" src="https://user-images.githubusercontent.com/108459576/194833071-7b3d2090-77da-4a84-84e2-fc621fb178fc.png">
 
 - 실수형: 소수부가 있는 수
-- `float`, `double`
+- `float`, `double`, `long double`
 ```cpp
 #include <iostream>
 using namespace std;
