@@ -19,7 +19,7 @@ int main() {
 - `using namespace std;`에서 `std::`를 생략할 수 있게 해줌.
 - `//` 또는 `/*문장*/` 으로 주석을 달 수 있음.
 
-## 1. 변수
+## 1. 변수 (Variable)
 
 > 변수는 변할 수 있는 수  
 > cf) 상수는 변할 수 없는 수
@@ -56,7 +56,7 @@ a = 5 b = 10
 - 변수는 `자료형 이름;`으로 선언한다. `자료형 이름 = 값;`으로 초기화할 수 있다.
 - 변수는 사용되기 전에 정의되어야 함.
 
-## 2. 자료형
+## 2. 자료형 (Data type)
 
 ### 2.1 정수형 자료형과 실수형 자료형
 
@@ -324,3 +324,139 @@ console >
 15
 ```
 - 위에선 `10 / 3`의 몫인 `3`을 취하고 `3 * 5`를 수행해 `15`를 출력함.
+
+## 4. 복합 데이터형 (Complex Data)
+
+- C++은 복합데이터형을 제공
+- 사용자 정의대로 새로운 데이터형을 만들 수 있다.
+- 복합 데이터형: 기본 정수형과 부동소수점형의 조합
+
+### 4.1 배열 (Array)
+- 같은 데이터형의 집합
+- `typeName arrayName[arraySize];`
+- `index`를 이용해 값에 접근 가능
+- `index`의 범위는 `0 ~ (배열의 크기 - 1)`
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+  int month[12]; // 배열의 선언
+  int month1[12] = {1, 2, 3}; // 초기화
+  
+  cout << month[0] << endl; // index 사용
+  
+  return 0;
+}
+```
+```
+console >
+1
+```
+- 배열 원소에 대입할 값들을 콤마로 구분하여 중괄호로 묶어 선언한다.
+- 초기화를 선언 이후에 나중에 할 수는 없다.
+- 배열을 다른 배열에 통째로 대입할 수 없다.
+- 초기화 값의 개수를 배열 원소의 개수보다 모자라게 제공할 수 있다.
+- 배열을 부분적으로 초기화하면, 나머지 원소들은 모두 0으로 설정한다. (첫 번째 원소만 0으로 초기화하면, 모두 0으로 초기화된다.)
+- 배열을 초기화할 때 대괄호 속을 비워두면 컴파일러가 초기화 값의 개수를 배열의 크기로 저장한다.
+
+### 4.2 문자열
+
+- 문자의 열
+
+#### 4.2.1 array를 사용한 문자열
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+  char a[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+  char b[] = "Hello";
+  
+  cout << a << endl;
+  cout << b << endl;
+  
+  return 0;
+}
+```
+```
+console >
+Hello
+Hello
+```
+
+#### 4.2.2 사용자 입력
+
+- `cin`을 통해 입력받음
+- ' '와 'enter'를 통해 값을 구분함
+
+```c++
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main(){
+    //사용자 입력
+    const int Size = 15;
+    char name1[Size];
+    char name2[Size] = "C++programming";
+
+    cout << "안녕하세요! 저는 " << name2;
+    cout << "입니다! 성함이 어떻게 되시나요?\n";
+    // cin >> name1;
+    // cin.getline(name1, Size);
+    cin.get(name1, Size);
+    cout << "음, " << name1 << "씨, 당신의 이름은 ";
+    cout << strlen(name1) << "자입니다만\n";
+    cout << sizeof(name1) << "바이트 크기의 배열에 저장되었습니다. \n";
+    cout << "이름이 " << name1[0] << "자로 시작하는군요.\n";
+    name2[3] = '\0';
+    cout << "제 이름의 처음 세 문자는 다음과 같습니다: ";
+    cout << name2 << endl;
+
+    return 0;
+}
+```
+```
+console >
+안녕하세요! 저는 C++programming입니다! 성함이 어떻게 되시나요?
+UserName
+음, UserName씨, 당신의 이름은 8자입니다만
+15 바이트 크기의 배열에 저장되었습니다.
+이름이 U자로 시작하는군요.
+제 이름의 처음 세 문자는 다음과 같습니다: C++
+```
+
+#### 4.2.3 string을 사용한 문자열
+
+- C 스타일로 string 객체를 초기화할 수 있다
+- `cin`을 사용하여 `string` 객체에 키보드 입력을 저장할 수 있다.
+- `cout`을 사용하여 `string` 객체를 출력할 수 있다.
+- 배열 표기를 사용하여 `string` 객체에 저장되어 있는 개별적인 문자들에 접근할 수 있다.
+- 배열은 다른 배열에 통째로 대입할 수 없지만 `string`은 가능하다.
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main(){
+    char char1[20];
+    char char2[20] = "jaguar";
+    string str1;
+    string str2 = "panda";
+    //char1 = char2; // 불가능
+    str1 = str2; // 가능
+    cout << str1 << endl;
+    cout << str1[0] << endl;
+    
+    return 0;
+}
+```
+```
+console >
+panda
+p
+```
