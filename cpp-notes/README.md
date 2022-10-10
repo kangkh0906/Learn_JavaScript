@@ -262,7 +262,7 @@ console>>
 ```
 
 
-## 3. 산술연산자
+## 3. 산술연산자 (Operator)
 ### 3.1 기본 연산자
 > '+' : 두 개의 피연산자의 합을 계산한다.  
 > '-' : 첫 번째 피연산자에서 두 번째 피연산자의 차를 계산한다.  
@@ -444,3 +444,63 @@ console>>
 panda
 p
 ```
+
+### 4.3 구조체 (Struct)
+- 다른 데이터형이 허용되는 데이터의 집합
+```c++
+#include <cstring>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  struct MyStruct {
+    string name;
+    string position;
+    int height;
+    int weight;
+  } B;
+
+  MyStruct A;
+  A.name = "Son";
+  A.position = "Striker";
+  A.height = 183;
+  A.weight = 77;
+  /*
+    MyStruct A = {
+        "Son",
+        "Striker",
+        183,
+        77};
+  */
+  cout << A.name << endl;
+  cout << A.position << endl;
+  cout << A.height << endl;
+  cout << A.weight << endl;
+
+  B = {};
+  cout << B.height << endl;
+
+  MyStruct C[2] = {
+      {"A", "A", 1, 1},
+      {"B", "B", 2, 2}};
+
+  cout << C[0].height << endl;
+
+  return 0;
+}
+
+```
+```
+console>>
+Son
+Striker
+183
+77
+0
+1
+```
+- `struct structName {};` 형태로 구조체를 선언할 수 있다.
+- `srtuctName myName;` 형태로 사용할 수 있다.
+- `myName.memberName` 형태로 값에 접근할 수 있다.
+- 구조체를 새로운 데이터타입으로 사용하는 배열을 사용할 수 있다.
