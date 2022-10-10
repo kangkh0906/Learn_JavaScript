@@ -133,6 +133,8 @@ console >
 
 #### 1.2.2 문자형 자료형
 
+<img alt="ASCII 코드표" src="http://www.vlsifacts.com/wp-content/uploads/2021/10/ASCII-Code.png">
+
 - `char`: 작은 문자형
 - ASCII Code에서 '한 단어'를 사용함.
 - `'a'`와 같이 반드시 `'`를 사용해야함.
