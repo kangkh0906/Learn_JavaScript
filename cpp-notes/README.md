@@ -504,3 +504,43 @@ Striker
 - `srtuctName myName;` 형태로 사용할 수 있다.
 - `myName.memberName` 형태로 값에 접근할 수 있다.
 - 구조체를 새로운 데이터타입으로 사용하는 배열을 사용할 수 있다.
+
+### 4.4 공용체 (Union)
+- 서로 다른 데이터형을 한 번에 한 가지만 보관할 수 있다.
+- 새로운 값이 들어오면 이전 값은 쓰레기값이 된다.
+- 메모리를 아낄 수 있다.
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  union MyUnion {
+    int intVal;
+    long longVal;
+    float floatVal;
+  };
+
+  MyUnion test;
+  test.intVal = 3;
+  cout << test.intVal << endl;
+  test.longVal = 33;
+  cout << test.intVal << endl;
+  cout << test.longVal << endl;
+  test.floatVal = 3.3;
+  cout << test.intVal << endl;
+  cout << test.longVal << endl;
+  cout << test.floatVal << endl;
+
+  return 0;
+}
+```
+```
+console>>
+33
+33
+1079194419
+1079194419
+3.3
+```
