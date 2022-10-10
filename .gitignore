@@ -2,7 +2,13 @@
 *
 
 # Unignore all with extensions
-!*.*
+# !*.*
+!*.cpp
+!*.js
+!*.py
+!*.md
+!*.html
+!*.css
 
 # Unignore all dirs
 !*/

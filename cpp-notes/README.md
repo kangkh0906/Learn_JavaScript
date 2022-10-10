@@ -47,7 +47,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 a = 5 b = 10
 ```
 - 변수는 `자료형 이름;`으로 선언한다. `자료형 이름 = 값;`으로 초기화할 수 있다.
@@ -69,7 +69,7 @@ using namespace std;
 
 int main() {
   int n_int = INT_MAX;
-  short n_short = SHORT_MAX;
+  short n_short = SHRT_MAX;
   long n_long = LONG_MAX;
   long long n_llong = LLONG_MAX;
 
@@ -92,7 +92,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 int는 4바이트
 이 바이트의 최대값은 2147483647
 short는 2바이트
@@ -122,7 +122,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 3.14 3
 ```
 
@@ -150,7 +150,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 M
 a
 ```
@@ -174,7 +174,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 0 1 1
 ```
 
@@ -188,9 +188,10 @@ console >
 ```cpp
 #include <iostream>
 using namespace std;
+// #define PIE 3.141592
 
 int main() {
-  const float PIE = 3.141592
+  const float PIE = 3.141592;
   PIE = 1.234; // 상수는 변경이 불가능
   
   int r = 3;
@@ -205,7 +206,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 28.2743 28.2743
 ```
 
@@ -227,13 +228,13 @@ int main() {
   cout << a << endl;
   
   char ch = 'M';
-  cout << (int)ch << ' ' << int(ch) << ' ' << static_cast<int>(ch) <<endl;
+  cout << (int)ch << ' ' << int(ch) << ' ' << static_cast<int>(ch) << endl;
   
   return 0;
 }
 ```
 ```
-console >
+console>>
 3
 77 77 77
 ```
@@ -247,15 +248,15 @@ console >
 using namespace std;
 
 int main() {
-  auto a = 100; // int
-  auto b = 1.5; // float
+  auto a = 100;     // int
+  auto b = 1.5;     // float
   auto c = 1.3e12L; // long long
-  
+
   return 0;
 }
 ```
 ```
-console >
+console>>
 3
 77 77 77
 ```
@@ -286,7 +287,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 a + b = 13
 a - b = 7
 a * b = 30
@@ -308,7 +309,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 15
 ```
 - 위에선 `10 / 3`의 몫인 `3`을 취하고 `3 * 5`를 수행해 `15`를 출력함.
@@ -329,16 +330,16 @@ console >
 using namespace std;
 
 int main() {
-  int month[12]; // 배열의 선언
+  int month[12];              // 배열의 선언
   int month1[12] = {1, 2, 3}; // 초기화
-  
+
   cout << month[0] << endl; // index 사용
-  
+
   return 0;
 }
 ```
 ```
-console >
+console>>
 1
 ```
 - 배열 원소에 대입할 값들을 콤마로 구분하여 중괄호로 묶어 선언한다.
@@ -367,7 +368,7 @@ int main() {
 }
 ```
 ```
-console >
+console>>
 Hello
 Hello
 ```
@@ -383,29 +384,29 @@ Hello
 using namespace std;
 
 int main(){
-    //사용자 입력
-    const int Size = 15;
-    char name1[Size];
-    char name2[Size] = "C++programming";
+  //사용자 입력
+  const int Size = 15;
+  char name1[Size];
+  char name2[Size] = "C++programming";
 
-    cout << "안녕하세요! 저는 " << name2;
-    cout << "입니다! 성함이 어떻게 되시나요?\n";
-    // cin >> name1;
-    // cin.getline(name1, Size);
-    cin.get(name1, Size);
-    cout << "음, " << name1 << "씨, 당신의 이름은 ";
-    cout << strlen(name1) << "자입니다만\n";
-    cout << sizeof(name1) << "바이트 크기의 배열에 저장되었습니다. \n";
-    cout << "이름이 " << name1[0] << "자로 시작하는군요.\n";
-    name2[3] = '\0';
-    cout << "제 이름의 처음 세 문자는 다음과 같습니다: ";
-    cout << name2 << endl;
+  cout << "안녕하세요! 저는 " << name2;
+  cout << "입니다! 성함이 어떻게 되시나요?\n";
+  // cin >> name1;
+  // cin.getline(name1, Size);
+  cin.get(name1, Size);
+  cout << "음, " << name1 << "씨, 당신의 이름은 ";
+  cout << strlen(name1) << "자입니다만\n";
+  cout << sizeof(name1) << "바이트 크기의 배열에 저장되었습니다. \n";
+  cout << "이름이 " << name1[0] << "자로 시작하는군요.\n";
+  name2[3] = '\0';
+  cout << "제 이름의 처음 세 문자는 다음과 같습니다: ";
+  cout << name2 << endl;
 
-    return 0;
+  return 0;
 }
 ```
 ```
-console >
+console>>
 안녕하세요! 저는 C++programming입니다! 성함이 어떻게 되시나요?
 UserName
 음, UserName씨, 당신의 이름은 8자입니다만
@@ -426,20 +427,20 @@ UserName
 using namespace std;
 
 int main(){
-    char char1[20];
-    char char2[20] = "jaguar";
-    string str1;
-    string str2 = "panda";
-    //char1 = char2; // 불가능
-    str1 = str2; // 가능
-    cout << str1 << endl;
-    cout << str1[0] << endl;
-    
-    return 0;
+  char char1[20];
+  char char2[20] = "jaguar";
+  string str1;
+  string str2 = "panda";
+  //char1 = char2; // 불가능
+  str1 = str2; // 가능
+  cout << str1 << endl;
+  cout << str1[0] << endl;
+  
+  return 0;
 }
 ```
 ```
-console >
+console>>
 panda
 p
 ```
