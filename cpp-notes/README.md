@@ -130,3 +130,55 @@ int main() {
 console >
 3.14 3
 ```
+
+#### 1.2.2 문자형 자료형
+
+- `char`: 작은 문자형
+- ASCII Code에서 '한 단어'를 사용함.
+- `'a'`와 같이 반드시 `'`를 사용해야함.
+- null문자인 `\0` 때문
+- `""`는 명시적으로 null문자를 포함 (`string`)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a = 77;
+  char b = a;
+  cout << b << endl;
+  
+  b = 'a';
+  cout << b << endl;
+  return 0;
+}
+```
+```
+console >
+M
+a
+```
+
+#### 1.2.3 bool형 자료형
+
+- `bool`: 0 혹은 1
+- `0` 만 `0`, 나머지는 모두 `1`
+- `0`은 `false`를, `1`은 `true`를 나타냄
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  bool a = 0;
+  bool b = 1;
+  bool c = 10;
+  
+  cout << a << ' ' << b << ' ' << c << endl;
+  return 0;
+}
+```
+```
+console >
+0 1 1
+```
