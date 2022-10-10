@@ -56,9 +56,9 @@ a = 5 b = 10
 - 변수는 `자료형 이름;`으로 선언한다. `자료형 이름 = 값;`으로 초기화할 수 있다.
 - 변수는 사용되기 전에 정의되어야 함.
 
-### 1.2 자료형
+## 2 자료형
 
-#### 1.2.1 정수형 자료형과 실수형 자료형
+### 2.1 정수형 자료형과 실수형 자료형
 
 <img width="891" alt="스크린샷 2022-10-10 17 56 01" src="https://user-images.githubusercontent.com/108459576/194831638-d20dfd3c-0adb-47ff-ace9-3018d321a56c.png">
 
@@ -131,7 +131,7 @@ console >
 3.14 3
 ```
 
-#### 1.2.2 문자형 자료형
+### 2.2 문자형 자료형
 
 <img alt="ASCII 코드표" src="http://www.vlsifacts.com/wp-content/uploads/2021/10/ASCII-Code.png">
 
@@ -161,7 +161,7 @@ M
 a
 ```
 
-#### 1.2.3 bool형 자료형
+### 2.3 bool형 자료형
 
 - `bool`: 0 혹은 1
 - `0` 만 `0`, 나머지는 모두 `1`
@@ -183,4 +183,66 @@ int main() {
 ```
 console >
 0 1 1
+```
+
+### 2.4 const 제한자
+
+- 바뀔 필요가 없는 수, 바뀌어서는 안되는 수를 `상수`라고 함
+- `#define PIE 3.141592` (C style)
+- `const float PIE = 3.141592;` (C++ style)
+- c++에서는 자료형까지 선언한다는 차이점이 있음.
+- 반드시 초기화의 방법으로만 선언 가능. 후에 변환이 불가능하기 때문
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  const float PIE = 3.141592
+  PIE = 1.234; // 상수는 변경이 불가능
+  
+  int r = 3;
+  float s = r * r * PIE;
+  
+  int r2 = 3;
+  float s2 = r2 * r2 * PIE;
+  
+  cout << s << ' ' << s2 << endl;
+  
+  return 0;
+}
+```
+```
+console >
+28.2743 28.2743
+```
+
+### 2.5 데이터형 변환
+
+- 특정 데이터형의 변수에 다른 데이터형의 값을 대입했을 때
+- 수식에 데이터형을 혼합하여 사용했을 때
+- 함수에 매개변수를 전달할 때
+
+강제적으로 데이터형을 변환하는 방법
+- `typeName(a)` `(typeName)a`
+- `static_cast<typeName>(a)`
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a = 3.141592; // int형 데이터에 float형 데이터를 대입함 -> int형으로 변환
+  cout << a << endl;
+  
+  char ch = 'M';
+  cout << (int)ch << ' ' << int(ch) << ' ' << static_cast<int>(ch) <<endl;
+  
+  return 0;
+}
+```
+```
+console >
+3
+77 77 77
 ```
