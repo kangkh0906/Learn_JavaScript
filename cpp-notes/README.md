@@ -56,3 +56,77 @@ a = 5 b = 10
 - 변수는 `자료형 이름;`으로 선언한다. `자료형 이름 = 값;`으로 초기화할 수 있다.
 - 변수는 사용되기 전에 정의되어야 함.
 
+### 1.2 자료형
+
+#### 1.2.1 정수형 자료형과 실수형 자료형
+
+<img width="891" alt="스크린샷 2022-10-10 17 56 01" src="https://user-images.githubusercontent.com/108459576/194831638-d20dfd3c-0adb-47ff-ace9-3018d321a56c.png">
+
+- 정수형: 소수부가 없는 수
+- 음의 정수, 0, 양의 정수
+- `short`, `int`, `long`, `long long`
+- `unsigned`를 이용해 음의 영역을 사용하지 않아 더 큰 값을 저장할 수 있음.
+
+```cpp
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main() {
+  int n_int = INT_MAX;
+  short n_short = SHORT_MAX;
+  long n_long = LONG_MAX;
+  long long n_llong = LLONG_MAX;
+
+  cout << "int는 " << sizeof n_int << "바이트" << endl;
+  cout << "이 바이트의 최대값은 " << n_int << endl;
+  
+  cout << "short는 " << sizeof n_short << "바이트" << endl;
+  cout << "이 바이트의 최대값은 " << n_short << endl;
+
+  cout << "long은 " << sizeof n_long << "바이트" << endl;
+  cout << "이 바이트의 최대값은 " << n_long << endl;
+
+  cout << "long long은 " << sizeof n_llong << "바이트" << endl;
+  cout << "이 바이트의 최대값은 " << n_llong << endl;
+  
+  unsigned short a = -1;
+  cout << a << endl; // 값의 범위를 벗어나 반대편으로 이동함
+  
+  return 0;
+}
+```
+```
+console >
+int는 4바이트
+이 바이트의 최대값은 2147483647
+short는 2바이트
+이 바이트의 최대값은 32767
+long은 4바이트
+이 바이트의 최대값은 2147483647
+long long은 8바이트
+이 바이트의 최대값은 9223372036854775807
+65535
+```
+
+<img width="872" alt="스크린샷 2022-10-10 18 10 44" src="https://user-images.githubusercontent.com/108459576/194833071-7b3d2090-77da-4a84-84e2-fc621fb178fc.png">
+
+- 실수형: 소수부가 있는 수
+- `float`, `double`
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  float a = 3.14;
+  int b = 3.14; // 소수점이 버려짐
+  
+  cout << a << ' ' << b << endl;
+  
+  return 0;
+}
+```
+```
+console >
+3.14 3
+```
