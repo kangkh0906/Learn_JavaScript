@@ -450,7 +450,6 @@ p
 ```c++
 #include <cstring>
 #include <iostream>
-
 using namespace std;
 
 int main() {
@@ -512,7 +511,6 @@ Striker
 
 ```c++
 #include <iostream>
-
 using namespace std;
 
 int main() {
@@ -544,3 +542,42 @@ console>>
 1079194419
 3.3
 ```
+
+### 4.5 열거체
+- 기호 상수를 만드는 것에 대한 또다른 방법
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+  enum spectrum { red /*= 0*/,
+                  orange /*= 2*/,
+                  yellow /*= 4*/,
+                  green,
+                  blue,
+                  violet,
+                  indigo,
+                  ultraviolet };
+
+  spectrum a = orange;
+  cout << a << endl;
+
+  int b;
+  b = blue;
+  b = blue + 3;
+  cout << b << endl;
+
+  return 0;
+}
+```
+```
+console>>
+1
+7
+```
+- `spectrum`을 새로운 데이터형 이름으로 만든다.
+- red, orange, yellow ... 0에서부터 7까지 정수 값을 각각 나타내는 기호 상수로 만듭니다.
+- 열거체를 선언할 때는 열거자만 대입할 수 있다.
+- 정수형 자료에 대입된 열거자는 산술될 수 있다.
+- 열거자의 값을 초기화하게 되면 다음 값은 앞의 열거자 값의 +1 이다.
