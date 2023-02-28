@@ -127,7 +127,7 @@ console>>
 ```
 
 ### 2.2 문자형 자료형
-<img alt="ASCII 코드표" src="http://www.vlsifacts.com/wp-content/uploads/2021/10/ASCII-Code.png">
+<img alt="ASCII 코드표" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ASCII-Table-wide.svg/2560px-ASCII-Table-wide.svg.png">
 
 - `char`: 작은 문자형
 - ASCII Code에서 '한 단어'를 사용함.
